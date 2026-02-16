@@ -3,66 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makers.com | Social Links</title>
+    <title>Makers.com | Roblox Game Development Hub</title>
+    <meta name="description" content="Roblox game development tutorials, Lua scripting guides, and game showcases for developers in 2026">
+    <meta name="keywords" content="roblox, game development, lua, scripting, makers, 2026">
     <style>
+        /* ALL CSS GOES HERE - or link to style.css */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: white;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e);
+            color: #ffffff;
             min-height: 100vh;
-            padding: 20px;
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 20px;
         }
         
+        /* Header */
         header {
             text-align: center;
-            margin-bottom: 40px;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        h1 {
-            font-size: 3rem;
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
             margin-bottom: 10px;
             background: linear-gradient(45deg, #ff0000, #5865F2, #00a2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
         }
         
         .tagline {
-            font-size: 1.2rem;
-            opacity: 0.8;
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00a2ff;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
         
         /* Social Links */
         .social-section {
+            padding: 60px 20px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .social-section h2 {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ff0000;
         }
         
         .social-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
         .social-card {
@@ -78,134 +105,188 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 180px;
         }
         
         .social-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: currentColor;
         }
         
         .social-icon {
-            width: 60px;
-            height: 60px;
+            font-size: 2.5rem;
             margin-bottom: 15px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
         }
         
         .social-card h3 {
+            font-size: 1.4rem;
             margin-bottom: 10px;
-            font-size: 1.3rem;
         }
         
         .social-card p {
             opacity: 0.8;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
         
-        /* Platform-specific colors */
-        .youtube { background: rgba(255, 0, 0, 0.2); border-color: #ff0000; }
-        .youtube:hover { background: rgba(255, 0, 0, 0.3); }
-        .youtube .social-icon { background: #ff0000; }
+        /* Content Section */
+        .content {
+            padding: 60px 20px;
+        }
         
-        .discord { background: rgba(88, 101, 242, 0.2); border-color: #5865F2; }
-        .discord:hover { background: rgba(88, 101, 242, 0.3); }
-        .discord .social-icon { background: #5865F2; }
+        .content h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #5865F2;
+        }
         
-        .roblox { background: rgba(0, 162, 255, 0.2); border-color: #00a2ff; }
-        .roblox:hover { background: rgba(0, 162, 255, 0.3); }
-        .roblox .social-icon { background: #00a2ff; }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
         
-        .github { background: rgba(51, 51, 51, 0.2); border-color: #333; }
-        .github:hover { background: rgba(51, 51, 51, 0.3); }
-        .github .social-icon { background: #333; }
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid;
+        }
         
-        .twitter { background: rgba(29, 161, 242, 0.2); border-color: #1DA1F2; }
-        .twitter:hover { background: rgba(29, 161, 242, 0.3); }
-        .twitter .social-icon { background: #1DA1F2; }
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
         
-        .beacons { background: rgba(255, 105, 180, 0.2); border-color: #FF69B4; }
-        .beacons:hover { background: rgba(255, 105, 180, 0.3); }
-        .beacons .social-icon { background: #FF69B4; }
-        
+        /* Footer */
         footer {
             text-align: center;
-            margin-top: 50px;
-            opacity: 0.7;
-            font-size: 0.9rem;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
         }
         
-        @media (max-width: 600px) {
-            .social-grid {
-                grid-template-columns: 1fr;
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
             }
             
-            h1 {
-                font-size: 2rem;
+            .social-grid, .features {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header>
-            <h1>Makers.com</h1>
-            <p class="tagline">Roblox Game Development Hub | 2026</p>
+            <h1 class="logo">Makers.com</h1>
+            <p class="tagline">Roblox Game Development Hub | 2026 Edition</p>
+            <p>Everything about Roblox development, Lua scripting, and game creation</p>
         </header>
         
-        <div class="social-section">
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Makers.com</h2>
+            <div class="about-content">
+                <p>Welcome to <strong>Makers.com</strong> – your ultimate destination for Roblox game development in 2026!</p>
+                <p>I'm <strong>Maker</strong> from Laval, Canada, passionate about creating amazing Roblox games and sharing everything I learn with the community.</p>
+                <p>This platform is dedicated to helping developers of all levels improve their skills, from beginner Lua scripting to advanced game optimization techniques.</p>
+            </div>
+        </section>
+        
+        <!-- Social Links -->
+        <section class="social-section">
             <h2>Connect With Me</h2>
             <div class="social-grid">
-                <!-- YouTube -->
-                <a href="https://youtube.com/@YourChannel" target="_blank" class="social-card youtube">
+                <a href="https://youtube.com/@YourChannel" target="_blank" class="social-card" style="color: #ff0000;">
                     <div class="social-icon">▶️</div>
                     <h3>YouTube</h3>
                     <p>Game tutorials & development videos</p>
                 </a>
                 
-                <!-- Discord -->
-                <a href="https://discord.gg/YourInvite" target="_blank" class="social-card discord">
+                <a href="https://discord.gg/YourInvite" target="_blank" class="social-card" style="color: #5865F2;">
                     <div class="social-icon">💬</div>
                     <h3>Discord</h3>
                     <p>Join our developer community</p>
                 </a>
                 
-                <!-- Roblox -->
-                <a href="https://www.roblox.com/users/YourID/profile" target="_blank" class="social-card roblox">
+                <a href="https://www.roblox.com/users/YourID/profile" target="_blank" class="social-card" style="color: #00a2ff;">
                     <div class="social-icon">🎮</div>
                     <h3>Roblox</h3>
                     <p>Play my games & see my profile</p>
                 </a>
                 
-                <!-- GitHub -->
-                <a href="https://github.com/YourUsername" target="_blank" class="social-card github">
+                <a href="https://github.com/YourUsername" target="_blank" class="social-card" style="color: #333;">
                     <div class="social-icon">💻</div>
                     <h3>GitHub</h3>
                     <p>View my code & projects</p>
                 </a>
                 
-                <!-- Twitter/X -->
-                <a href="https://twitter.com/YourHandle" target="_blank" class="social-card twitter">
-                    <div class="social-icon">🐦</div>
-                    <h3>Twitter/X</h3>
-                    <p>Updates & game development tips</p>
-                </a>
-                
-                <!-- All Links (Beacons) -->
-                <a href="https://beacons.ai/yourname" target="_blank" class="social-card beacons">
+                <a href="https://beacons.ai/yourname" target="_blank" class="social-card" style="color: #FF69B4;">
                     <div class="social-icon">🔗</div>
                     <h3>All Links</h3>
                     <p>Everything in one place</p>
                 </a>
             </div>
-        </div>
+        </section>
         
+        <!-- Content Section -->
+        <section class="content">
+            <h2>What You'll Find Here</h2>
+            <div class="features">
+                <div class="feature" style="border-left-color: #ff0000;">
+                    <h3>🎯 Roblox Tutorials</h3>
+                    <p>Step-by-step guides for Roblox Studio, from beginner to advanced techniques. Learn game mechanics, UI design, and multiplayer systems.</p>
+                </div>
+                
+                <div class="feature" style="border-left-color: #5865F2;">
+                    <h3>🛠️ Lua Scripting</h3>
+                    <p>Comprehensive Lua scripting tutorials, code snippets, and best practices for efficient game development in Roblox.</p>
+                </div>
+                
+                <div class="feature" style="border-left-color: #00a2ff;">
+                    <h3>🚀 Game Showcases</h3>
+                    <p>Showcase of my Roblox projects, behind-the-scenes development logs, and updates on current games in development.</p>
+                </div>
+                
+                <div class="feature" style="border-left-color: #FF69B4;">
+                    <h3>💰 Monetization</h3>
+                    <p>Strategies for monetizing your Roblox games, including Game Passes, Developer Products, and advertising techniques.</p>
+                </div>
+                
+                <div class="feature" style="border-left-color: #4CAF50;">
+                    <h3>📈 Optimization</h3>
+                    <p>Performance optimization tips, memory management, and techniques to make your games run smoothly on all devices.</p>
+                </div>
+                
+                <div class="feature" style="border-left-color: #FF9800;">
+                    <h3>🤝 Community</h3>
+                    <p>Connect with other developers, share your projects, get feedback, and collaborate on game development.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
         <footer>
-            <p>© 2026 Makers.com | Made with ❤️ by Maker | Laval, Canada</p>
-            <p>All social links updated for 2026</p>
+            <p><strong>Makers.com</strong> | Roblox Game Development Hub</p>
+            <p class="copyright">© 2026 Makers.com | Made with ❤️ by Maker | Laval, Canada</p>
+            <p class="copyright">All content updated for 2026 | Powered by GitHub Pages</p>
         </footer>
     </div>
 </body>
